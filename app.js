@@ -3,11 +3,9 @@ const morgan = require('morgan');
 const app = express();
 
 const usersRoutes = require('./api/users');
-const circlesRoutes = require('./api/circles');
 
 app.use(morgan('dev'));
 app.use('/users', usersRoutes);
-app.use('/circles', circlesRoutes);
 
 app.use((req, res, next) => {
     const error = new Error('Not Pippo');

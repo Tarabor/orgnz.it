@@ -10,8 +10,6 @@ firebase.initializeApp({
 });
 
 
-console.log("CIAO");
-
 const db = firebase.firestore();
 
 router.get("/all", (req, res) => {
