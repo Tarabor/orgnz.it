@@ -6,7 +6,8 @@ module.exports = {
     // Firebase connection options
     firebase: {
         databaseURL: "https://povertyapp.firebaseio.com",
-        serviceAccount: "server/account/account.json"
+        serviceAccount: "server/account/account.json",
+        serviceAccountTest: "server/account/accountTest.json"
     }
 
 };
