@@ -9,6 +9,9 @@ firebase.initializeApp({
   databaseURL: "https://povertyapp.firebaseio.com"
 });
 
+
+console.log("CIAO");
+
 const db = firebase.firestore();
 
 router.get("/all", (req, res) => {
