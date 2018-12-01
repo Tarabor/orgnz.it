@@ -1,17 +1,10 @@
-const express = require("express");
-const router = express.Router();
+'use strict';
 
 const firebase = require("firebase-admin");
-const serviceAccount = require("./serviceAccountKey.json");
-
-firebase.initializeApp({
-  credential: firebase.credential.cert(serviceAccount),
-  databaseURL: "https://povertyapp.firebaseio.com"
-});
 
 const db = firebase.firestore();
 
-router.get("/all", (req, res) => {
+exports.getAll = function(req, res) {
   db.collection("users")
     .get()
     .then(response => {
@@ -22,6 +15,4 @@ router.get("/all", (req, res) => {
     .catch(err => {
       console.log("Error getting users documents", err);
     });
-});
-
-module.exports = router;
+};
