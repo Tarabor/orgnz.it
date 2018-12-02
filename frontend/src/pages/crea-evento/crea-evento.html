@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Crea Evento
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page5">
+  <form id="creaEvento-form2">
+    <ion-item id="creaEvento-select1">
+      <ion-label>
+        Che tipo di evento?
+      </ion-label>
+      <ion-select name="tipo">
+        <ion-option>
+          Calcetto
+        </ion-option>
+        <ion-option>
+          Birretta
+        </ion-option>
+        <ion-option>
+          Pizza
+        </ion-option>
+        <ion-option>
+          Cinema
+        </ion-option>
+        <ion-option>
+          Meeting
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item id="creaEvento-select2">
+      <ion-label>
+        Con chi?
+      </ion-label>
+      <ion-select name="cerchia"></ion-select>
+    </ion-item>
+  </form>
+  <div id="creaEvento-markdown2" class="show-list-numbers-and-dots">
+    <p style="color:#000000;">
+      Imposta un
+      <strong>
+        luogo
+      </strong>
+    </p>
+  </div>
+  <form id="creaEvento-form3">
+    <ion-item id="creaEvento-input3">
+      <ion-label floating></ion-label>
+      <ion-input type="text" placeholder="Dove?" name="luogo"></ion-input>
+    </ion-item>
+  </form>
+  <div id="creaEvento-markdown3" class="show-list-numbers-and-dots">
+    <p style="color:#000000;">
+      Imposta un
+      <strong>
+        orario
+      </strong>
+    </p>
+  </div>
+  <form id="creaEvento-form5">
+    <ion-item id="creaEvento-input4">
+      <ion-label></ion-label>
+      <ion-input type="text" placeholder="A che ora?"></ion-input>
+    </ion-item>
+  </form>
+  <button id="creaEvento-button7" ion-button color="balanced" block on-click="goToSuccess()">
+    Crea
+  </button>
+</ion-content>
