@@ -1,3 +1,7 @@
+********************
+NodeJS version: 8.x;
+********************
+
 ###### Create Project #####
 
 mkdir directory_name
