@@ -18,14 +18,8 @@ exports.getAll = function(req, res) {
 };
 
 exports.insertSingleUser = function(req, res) {
-  var user = req.params;
-  console.log("USERSSSSS: ", req)
-  /*{
-    name: 'Peppe',
-    surname: 'Giiiiiiiiiii',
-    age: '55'
-  };*/
-  
+  var user = req.body;
+   
   db.collection('users').doc().set(user)
   .then(response => {
     res.send(response);
