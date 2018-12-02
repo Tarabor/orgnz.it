@@ -16,3 +16,22 @@ exports.getAll = function(req, res) {
       console.log("Error getting users documents", err);
     });
 };
+
+exports.insertSingleUser = function(req, res) {
+  var user = req.params;
+  console.log("USERSSSSS: ", req)
+  /*{
+    name: 'Peppe',
+    surname: 'Giiiiiiiiiii',
+    age: '55'
+  };*/
+  
+  db.collection('users').doc().set(user)
+  .then(response => {
+    res.send(response);
+    console.log("Insert user: ", response);
+  })
+  .catch(err => {
+    console.log("Error in user insetion", err);
+  });
+};
