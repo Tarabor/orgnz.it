@@ -1,0 +1,12 @@
+{
+  "extends": ["airbnb-base", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "import/no-dynamic-require": 0,
+    "func-names": 0,
+    "prefer-destructuring": 0
+  },
+  "env": {
+    "node": true
+  }
+}
