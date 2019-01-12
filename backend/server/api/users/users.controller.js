@@ -1,31 +1,31 @@
-'use strict';
-
-const firebase = require("firebase-admin");
+const firebase = require('firebase-admin');
 
 const db = firebase.firestore();
 
 exports.getAll = function(req, res) {
-  db.collection("users")
+  db.collection('users')
     .get()
     .then(response => {
-      let usersNameList = [];
-      response.forEach( singleUser => usersNameList.push(singleUser.data().name) );
+      const usersNameList = [];
+      response.forEach(singleUser => usersNameList.push(singleUser.data().name));
       res.send(usersNameList);
     })
     .catch(err => {
-      console.log("Error getting users documents", err);
+      console.log('Error getting users documents', err);
     });
 };
 
 exports.insertSingleUser = function(req, res) {
-  var user = req.body;
-   
-  db.collection('users').doc().set(user)
-  .then(response => {
-    res.send(response);
-    console.log("Insert user: ", response);
-  })
-  .catch(err => {
-    console.log("Error in user insetion", err);
-  });
+  const user = req.body;
+
+  db.collection('users')
+    .doc()
+    .set(user)
+    .then(response => {
+      res.send(response);
+      console.log('Insert user: ', response);
+    })
+    .catch(err => {
+      console.log('Error in user insetion', err);
+    });
 };

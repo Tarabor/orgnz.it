@@ -1,9 +1,7 @@
-'use strict';
+const express = require('express');
+const controller = require('./auth.controller');
 
-var express = require('express');
-var controller = require('./auth.controller');
-
-var router = express.Router();
+const router = express.Router();
 
 router.get('/login', controller.login);
 router.get('/verifytoken', controller.verifyToken);

@@ -1,9 +1,7 @@
-'use strict';
+const express = require('express');
+const controller = require('./circles.controller');
 
-var express = require('express');
-var controller = require('./circles.controller');
-
-var router = express.Router();
+const router = express.Router();
 
 router.get('/all', controller.getAll);
 

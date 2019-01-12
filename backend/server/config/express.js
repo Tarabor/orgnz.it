@@ -2,13 +2,10 @@
  * Express configuration
  */
 
-'use strict';
-
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
 module.exports = function(app) {
-
-    app.use(morgan('dev'));
-    app.use(bodyParser.json());
-  };
+  app.use(morgan('dev'));
+  app.use(bodyParser.json());
+};

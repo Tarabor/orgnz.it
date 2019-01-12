@@ -1,9 +1,7 @@
-'use strict';
+const express = require('express');
+const controller = require('./users.controller');
 
-var express = require('express');
-var controller = require('./users.controller');
-
-var router = express.Router();
+const router = express.Router();
 
 router.get('/all', controller.getAll);
 router.post('/insert', controller.insertSingleUser);
