@@ -5,7 +5,7 @@
   "main": "server/app.js",
   "scripts": {
     "start": "node server/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "node --nolazy --inspect-brk=9229 server/app.js",
     "lint": "eslint --ignore-path .gitignore ."
   },
   "author": "Antonio Fraticelli, Angelo Di Martino, Marco Taraborrelli",
