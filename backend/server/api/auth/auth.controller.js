@@ -31,3 +31,18 @@ exports.login = function(req, res) {
       console.log('Error during user login: ', error);
     });
 };
+
+exports.createLogin = function(req, res) {
+  const user = req.body;
+  firebaseTest
+    .auth()
+    .createUserWithEmailAndPassword(user.email, user.password)
+    .then(firebaseUser => {
+      res.send(firebaseUser.user);
+      console.log('UserID: ', firebaseUser.user);
+    })
+    .catch(error => {
+      console.log('Error during user login: ', error);
+      res.status(500).send(error.message);
+    });
+};
