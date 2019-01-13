@@ -12,6 +12,7 @@ const server = require('http').createServer(app);
 
 require('./config/express')(app);
 require('./routes')(app);
+require('./errors')(app);
 
 // Start server
 server.listen(PORT, () => {

@@ -19,11 +19,10 @@ exports.insertSingleUser = function(req, res) {
   const user = req.body;
 
   db.collection('users')
-    .doc(user.username) // FIXME overwrites precedent users!!
-    .set(user)
+    .add(user)
     .then(response => {
-      res.send(response);
-      console.log('Insert user: ', response);
+      res.send(response.id);
+      console.log('Document written with ID: ', response.id);
     })
     .catch(err => {
       console.log('Error in user insetion', err);
