@@ -19,7 +19,7 @@ exports.insertSingleUser = function(req, res) {
   const user = req.body;
 
   db.collection('users')
-    .doc()
+    .doc(user.username) // FIXME overwrites precedent users!!
     .set(user)
     .then(response => {
       res.send(response);
