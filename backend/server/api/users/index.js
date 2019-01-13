@@ -7,6 +7,7 @@ const USER_SCHEMA = require('../../config/validation/users.json');
 const router = express.Router();
 
 router.get('/all', controller.getAll);
-router.post('/insert', validate({ body: USER_SCHEMA }), controller.insertSingleUser);
+router.post('/insert', validate({ body: USER_SCHEMA.post }), controller.insertSingleUser);
+router.put('/update', validate({ body: USER_SCHEMA.put }), controller.updateUser);
 
 module.exports = router;

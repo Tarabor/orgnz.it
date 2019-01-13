@@ -1,31 +1,68 @@
 {
-  "type": "object",
-  "properties": {
-    "phoneNumber": {
-      "type": "number",
-      "required": false
-    },
-    "name": {
-      "type": "string",
-      "required": true
-    },
-    "surname": {
-      "type": "string",
-      "required": true
-    },
-    "email": {
-      "type": "string",
-      "required": true
-    },
-    "gender": {
-      "type": "string",
-      "required": true,
-      "enum": ["Male", "Female"]
-    },
-    "type": {
-      "type": "string",
-      "required": false,
-      "enum": ["Street", "Avenue", "Boulevard"]
+  "post": {
+    "type": "object",
+    "properties": {
+      "phoneNumber": {
+        "type": "number",
+        "required": false
+      },
+      "name": {
+        "type": "string",
+        "required": true
+      },
+      "surname": {
+        "type": "string",
+        "required": true
+      },
+      "email": {
+        "type": "string",
+        "required": true
+      },
+      "gender": {
+        "type": "string",
+        "required": true,
+        "enum": ["Male", "Female"]
+      },
+      "type": {
+        "type": "string",
+        "required": false,
+        "enum": ["Street", "Avenue", "Boulevard"]
+      }
+    }
+  },
+  "put": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "required": true
+      },
+      "phoneNumber": {
+        "type": "number",
+        "required": true
+      },
+      "name": {
+        "type": "string",
+        "required": true
+      },
+      "surname": {
+        "type": "string",
+        "required": true
+      },
+      "email": {
+        "type": "string",
+        "required": true
+      },
+      "gender": {
+        "type": "string",
+        "required": true,
+        "enum": ["Male", "Female"]
+      },
+      "type": {
+        "type": "string",
+        "required": false,
+        "enum": ["Street", "Avenue", "Boulevard"]
+      }
     }
   }
 }

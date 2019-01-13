@@ -28,3 +28,20 @@ exports.insertSingleUser = function(req, res) {
       console.log('Error in user insetion', err);
     });
 };
+
+exports.updateUser = function(req, res) {
+  const user = req.body;
+  const id = user.id;
+  delete user.id;
+
+  db.collection('users')
+    .doc(id)
+    .set(user)
+    .then(response => {
+      res.send(`User with ${id} was updated correctly`);
+      console.log('Document written with ID: ', response);
+    })
+    .catch(err => {
+      console.log('Error in user insetion', err);
+    });
+};
