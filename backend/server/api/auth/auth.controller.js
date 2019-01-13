@@ -4,17 +4,22 @@ const firebaseTest = require('firebase');
 const authService = firebase.auth();
 
 exports.verifyToken = function(req, res) {
-  const idToken = '************';
-  authService
-    .verifyIdToken(idToken)
-    .then(decodedToken => {
-      const uid = decodedToken.uid;
-      res.send(uid);
-      console.log('UserID: ', uid);
-    })
-    .catch(error => {
-      console.log('Error during user check', error);
-    });
+  const idToken = req.query.token;
+  if (!idToken || idToken === '') {
+    res.status(500).send('Invalid Token');
+  } else {
+    authService
+      .verifyIdToken(idToken)
+      .then(decodedToken => {
+        const uid = decodedToken.uid;
+        res.send(uid);
+        console.log('UserID: ', uid);
+      })
+      .catch(error => {
+        console.log('Error during user check', error);
+        res.status(500).send('Decoding Firebase ID token failed.');
+      });
+  }
 };
 
 exports.login = function(req, res) {
