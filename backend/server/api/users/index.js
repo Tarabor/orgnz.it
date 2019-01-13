@@ -7,8 +7,8 @@ const USER_SCHEMA = require('../../config/validation/users.json');
 const router = express.Router();
 
 router.get('/all', controller.getAll);
-router.post('/insert', validate({ body: USER_SCHEMA.post }), controller.insertSingleUser);
-router.put('/update', validate({ body: USER_SCHEMA.put }), controller.updateUser);
-router.delete('/delete', validate({ body: USER_SCHEMA.delete }), controller.deleteUser);
+router.post('', validate({ body: USER_SCHEMA.post }), controller.insertUser);
+router.put('', validate({ body: USER_SCHEMA.put }), controller.updateUser);
+router.delete('', validate({ body: USER_SCHEMA.delete }), controller.deleteUser);
 
 module.exports = router;

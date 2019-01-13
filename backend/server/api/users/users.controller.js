@@ -15,13 +15,13 @@ exports.getAll = function(req, res) {
     });
 };
 
-exports.insertSingleUser = function(req, res) {
+exports.insertUser = function(req, res) {
   const user = req.body;
 
   db.collection('users')
     .add(user)
     .then(response => {
-      res.send(response.id);
+      res.send(`User ${user.name} created correctly with id=${response.id}`);
       console.log('Document written with ID: ', response.id);
     })
     .catch(err => {
