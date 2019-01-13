@@ -9,5 +9,6 @@ const router = express.Router();
 router.get('/all', controller.getAll);
 router.post('/insert', validate({ body: USER_SCHEMA.post }), controller.insertSingleUser);
 router.put('/update', validate({ body: USER_SCHEMA.put }), controller.updateUser);
+router.delete('/delete', validate({ body: USER_SCHEMA.delete }), controller.deleteUser);
 
 module.exports = router;

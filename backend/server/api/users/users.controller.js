@@ -45,3 +45,18 @@ exports.updateUser = function(req, res) {
       console.log('Error in user insetion', err);
     });
 };
+
+exports.deleteUser = function(req, res) {
+  const user = req.body;
+
+  db.collection('users')
+    .doc(user.id)
+    .delete()
+    .then(response => {
+      res.send(`User with ${user.id} successfully deleted!`);
+      console.log('Document written with ID: ', response);
+    })
+    .catch(err => {
+      console.log('Error in user deletion', err);
+    });
+};
