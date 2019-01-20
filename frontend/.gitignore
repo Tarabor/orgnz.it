@@ -31,7 +31,8 @@ www/
 src/config.ts
 $RECYCLE.BIN/
 
+src/config.ts
+
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
-package-lock.json
