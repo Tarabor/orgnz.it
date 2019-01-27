@@ -3,8 +3,8 @@ import { Nav, NavController } from '@ionic/angular';
 
 @Component({
     selector: 'app-add-circle',
-    templateUrl: './AddCircle.page.html',
-    styleUrls: ['./AddCircle.page.scss'],
+    templateUrl: './addCircle.page.html',
+    styleUrls: ['./addCircle.page.scss'],
   })
 export class AddCirclePage {
 
