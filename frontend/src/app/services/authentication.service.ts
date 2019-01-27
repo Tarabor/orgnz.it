@@ -44,9 +44,6 @@ export class AuthenticationService {
     });
   }
 
-  isAuthenticated() {
-    return this.authenticationState.value;
-  }
 
   // ########## Refactored Method
   signInWithEmail(credentials) {
@@ -55,6 +52,16 @@ export class AuthenticationService {
         this.authenticationState.next(true);
         this.storage.set(TOKEN_KEY, resp.user.getIdToken);
       }
+    });
+  }
+
+  isAuthenticated() {
+    return this.authenticationState.value;
+  }
+
+  getToken() {
+    this.storage.get(TOKEN_KEY).then(res => {
+        this.authenticationState.next(true);
     });
   }
 

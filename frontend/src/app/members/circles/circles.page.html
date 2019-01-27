@@ -8,9 +8,9 @@
 </ion-header>
 <ion-content padding id="page3">
   <ion-list id="cerchie-list4">
-    <ion-item color="none" on-click="goToCircle()" id="cerchie-list-item5">
+    <ion-item color="none" *ngFor="let circle of circles" on-click="goToCircle()" id="cerchie-list-item5">
       <ion-avatar item-left> <img /> </ion-avatar>
-      <h2>Cerchia1</h2>
+      <h2>{{ circle.name }}</h2>
     </ion-item>
   </ion-list>
 </ion-content>
