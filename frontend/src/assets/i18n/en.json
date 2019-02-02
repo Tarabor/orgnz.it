@@ -1,0 +1,8 @@
+{
+    "menu": "Menu",
+    "dashboard": {
+       "title": "Dashboard",
+       "createEvent": "Create an event",
+       "createCircle": "Create a circle" 
+    }
+}

@@ -1,4 +1,8 @@
 {
-    "HELLO": "hello",
-    "MENU": "Sommario"
+    "menu": "Menu",
+    "dashboard": {
+       "title": "Dashboard",
+       "createEvent": "Organizza un evento",
+       "createCircle": "Crea una cerchia" 
+    }
 }

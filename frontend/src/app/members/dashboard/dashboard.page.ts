@@ -1,7 +1,7 @@
 import { AuthenticationService } from './../../services/authentication.service';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import {TranslateService} from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,8 +11,9 @@ import {TranslateService} from '@ngx-translate/core';
 export class DashboardPage implements OnInit {
 
   constructor(private authService: AuthenticationService, 
-    private navCtrl: NavController,
-    translate: TranslateService) { }
+    private navCtrl: NavController, private translate: TranslateService) { 
+      this.translate.use('ita');
+    }
 
   ngOnInit() {
   }

@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title [translate]="'HELLO'"></ion-title>
+    <ion-title >{{ 'dashboard.title' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,11 +12,11 @@
     Organize it!
   </h1>
   <ion-button id="home-button5" expand="full" fill="clear" on-click="goToAddEvent()">
-    Organizza un evento
+    {{ 'dashboard.createEvent' | translate }}
     <ion-icon name="add-circle" slot="end"></ion-icon>
   </ion-button>
   <ion-button id="home-button6" expand="full" fill="clear" on-click="goToAddCircle()" class="addCircleBtn">
-    Crea un cerchia
+    {{ 'dashboard.createCircle' | translate }}
     <ion-icon name="add-circle" slot="end"></ion-icon>
   </ion-button>
 </ion-content>
