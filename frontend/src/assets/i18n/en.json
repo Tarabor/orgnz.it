@@ -3,6 +3,14 @@
     "dashboard": {
        "title": "Dashboard",
        "createEvent": "Create an event",
-       "createCircle": "Create a circle" 
+       "createCircle": "Create a circle"
+    },
+    "profile": {
+        "language": "Language",
+        "languages": {
+            "english": "English",
+            "italian": "Italian"
+        },
+        "languageChangePlaceholder": "Change language"
     }
 }

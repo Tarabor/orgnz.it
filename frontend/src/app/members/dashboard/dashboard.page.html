@@ -19,4 +19,17 @@
     {{ 'dashboard.createCircle' | translate }}
     <ion-icon name="add-circle" slot="end"></ion-icon>
   </ion-button>
+
+  <ion-card class="welcome-card">
+    <ion-card-content>
+      <ion-item>
+        <ion-label>{{ 'profile.language' | translate }}</ion-label>
+        <ion-select [(ngModel)]='language' (ionChange)='languageChange()' placeholder='{{ "profile.languageChangePlaceholder" | translate }}'>
+          <ion-select-option value='en' [selected]="language == this.value">{{ 'profile.languages.english' | translate }}</ion-select-option>
+          <ion-select-option value='ita' [selected]="language == this.value">{{ 'profile.languages.italian' | translate }}</ion-select-option>
+        </ion-select>
+      </ion-item> 
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

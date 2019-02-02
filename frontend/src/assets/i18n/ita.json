@@ -4,5 +4,13 @@
        "title": "Dashboard",
        "createEvent": "Organizza un evento",
        "createCircle": "Crea una cerchia" 
+    },
+    "profile": {
+        "language": "Lingua",
+        "languages": {
+            "english": "Inglese",
+            "italian": "Italiano"
+        },
+        "languageChangePlaceholder": "Cambia lingua"
     }
 }
