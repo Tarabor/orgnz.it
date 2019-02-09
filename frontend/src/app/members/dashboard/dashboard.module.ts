@@ -1,13 +1,13 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
-import { RouterModule } from "@angular/router";
-import { AuthenticationService } from "./../../services/authentication.service";
+import { RouterModule } from '@angular/router';
+import { AuthenticationService } from './../../services/authentication.service';
 
-import { IonicModule } from "@ionic/angular";
+import { IonicModule } from '@ionic/angular';
 
-import { DashboardPage } from "./dashboard.page";
+import { DashboardPage } from './dashboard.page';
 
 @NgModule({
   imports: [
@@ -17,7 +17,7 @@ import { DashboardPage } from "./dashboard.page";
     TranslateModule.forChild(),
     RouterModule.forChild([
       {
-        path: "",
+        path: '',
         component: DashboardPage
       }
     ])
@@ -30,6 +30,6 @@ export class DashboardPageModule {
   constructor(private authService: AuthenticationService) {}
 
   logout() {
-    this.authService.logout().then(() => console.log("Logged-out"));
+    this.authService.logout().then(() => console.log('Logged-out'));
   }
 }

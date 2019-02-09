@@ -10,10 +10,10 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class DashboardPage implements OnInit {
 
-  private language: string = this.translate.currentLang;
-  
-  constructor(private authService: AuthenticationService, 
-    private navCtrl: NavController, private translate: TranslateService) { 
+  language: string = this.translate.currentLang;
+
+  constructor(private authService: AuthenticationService,
+    private navCtrl: NavController, private translate: TranslateService) {
       this.translate.use('ita');
     }
 
@@ -28,11 +28,11 @@ export class DashboardPage implements OnInit {
     this.navCtrl.navigateForward('/members/addCircle');
   }
 
-  
+
   languageChange() {  // add this
     this.translate.use(this.language);  // add this
   }
-  
+
   logout() {
     this.authService.logout();
   }
