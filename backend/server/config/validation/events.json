@@ -1,0 +1,73 @@
+{
+  "post": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "required": true
+      },
+      "type": {
+        "type": "string",
+        "required": true
+      },
+      "userId": {
+        "type": "string",
+        "required": true
+      },
+      "circleId": {
+        "type": "string",
+        "required": true
+      },
+      "place": {
+        "type": "string",
+        "required": true
+      },
+      "time": {
+        "type": "string",
+        "required": true
+      }
+    }
+  },
+  "put": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "required": true
+      },
+      "name": {
+        "type": "string",
+        "required": true
+      },
+      "type": {
+        "type": "string",
+        "required": true
+      },
+      "userId": {
+        "type": "string",
+        "required": true
+      },
+      "circleId": {
+        "type": "string",
+        "required": true
+      },
+      "place": {
+        "type": "string",
+        "required": true
+      },
+      "time": {
+        "type": "string",
+        "required": true
+      }
+    }
+  },
+  "delete": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "required": true
+      }
+    }
+  }
+}
