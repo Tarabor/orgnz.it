@@ -1,5 +1,10 @@
 {
     "menu": "Menu",
+    "home": "Home",
+    "list": "Lista",
+    "events": "Eventi",
+    "circles": "Cerchie",
+    "logout": "Logout",
     "dashboard": {
        "title": "Dashboard",
        "createEvent": "Organizza un evento",

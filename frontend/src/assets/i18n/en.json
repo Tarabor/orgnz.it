@@ -1,5 +1,10 @@
 {
     "menu": "Menu",
+    "home": "Home",
+    "list": "List",
+    "events": "Events",
+    "circles": "Circles",
+    "logout": "Logout",
     "dashboard": {
        "title": "Dashboard",
        "createEvent": "Create an event",

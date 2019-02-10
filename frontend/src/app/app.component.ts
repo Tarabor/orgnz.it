@@ -15,27 +15,27 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 export class AppComponent {
   public appPages = [
     {
-      title: 'Home',
+      title: 'home',
       url: '/members/dashboard',
       icon: 'home'
     },
     {
-      title: 'List',
+      title: 'list',
       url: '/members/list',
       icon: 'list'
     },
     {
-      title: 'Events',
+      title: 'events',
       url: '/members/events',
       icon: 'calendar'
     },
     {
-      title: 'Circles',
+      title: 'circles',
       url: '/members/circles',
       icon: 'people'
     },
     {
-      title: 'Logout',
+      title: 'logout',
       url: '/members/logout',
       icon: 'power'
     }
@@ -65,7 +65,7 @@ export class AppComponent {
       this.splashScreen.hide();
       setTimeout(() => {
         this.showSplash = false;
-      }, 3000)
+      }, 2500)
       this.authenticationService.authenticationState.subscribe(state => {
         if (state) {
           this.router.navigate(['members', 'dashboard']);
