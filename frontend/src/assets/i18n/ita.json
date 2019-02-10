@@ -17,5 +17,14 @@
             "italian": "Italiano"
         },
         "languageChangePlaceholder": "Cambia lingua"
+    },
+    "addEvent": {
+        "title": "Crea un evento",
+        "type": "Che tipo di evento?",
+        "who": "Con chi?",
+        "set": "Imposta un ",
+        "where": "luogo",
+        "when": "orario",
+        "add": "Crea"
     }
 }

@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,6 +14,7 @@ import { AddEventPage } from './addEvent.page';
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
+    TranslateModule.forChild(),
     RouterModule.forChild([
       {
         path: '',

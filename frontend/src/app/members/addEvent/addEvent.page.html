@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Add event</ion-title>
+    <ion-title>{{ 'addEvent.title' | translate}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,7 +11,7 @@
   <form id="creaEvento-form2">
     <ion-item id="creaEvento-select1">
       <ion-label>
-        Che tipo di evento?
+        {{ 'addEvent.type' | translate}}
       </ion-label>
       <ion-select name="tipo">
         <ion-select-option>
@@ -33,16 +33,16 @@
     </ion-item>
     <ion-item id="creaEvento-select2">
       <ion-label>
-        Con chi?
+        {{ 'addEvent.who' | translate}}
       </ion-label>
       <ion-select name="cerchia"></ion-select>
     </ion-item>
   </form>
   <div id="creaEvento-markdown2" class="show-list-numbers-and-dots">
     <p style="color:#000000;">
-      Imposta un
+        {{ 'addEvent.set' | translate}}
       <strong>
-        luogo
+        {{ 'addEvent.where' | translate}}
       </strong>
     </p>
   </div>
@@ -54,9 +54,9 @@
   </form>
   <div id="creaEvento-markdown3" class="show-list-numbers-and-dots">
     <p style="color:#000000;">
-      Imposta un
+        {{ 'addEvent.set' | translate}}
       <strong>
-        orario
+        {{ 'addEvent.when' | translate}}
       </strong>
     </p>
   </div>
@@ -66,7 +66,8 @@
       <ion-input type="text" placeholder="A che ora?"></ion-input>
     </ion-item>
   </form>
-  <ion-button id="creaEvento-button7" block on-click="goToSuccess()">
-    Crea
+  <br>
+  <ion-button id="creaEvento-button7" expand="block" on-click="goToSuccess()">
+    {{ 'addEvent.add' | translate}}
   </ion-button>
 </ion-content>
