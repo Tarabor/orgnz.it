@@ -15,6 +15,24 @@ exports.getAll = function(req, res) {
     });
 };
 
+exports.getOne = function (req, res) {
+  db.collection('users')
+    .doc(req.params.id)
+    .get()
+    .then(doc => {
+      if (doc.exists) {
+        console.log("Document data:", doc.data());
+        res.send(doc.data());
+      } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+      }
+    })
+    .catch(err => {
+      console.log('Error getting users documents', err);
+    });
+};
+
 exports.insertUser = function(req, res) {
   const user = req.body;
 
