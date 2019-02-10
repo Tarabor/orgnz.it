@@ -2,3 +2,5 @@ node_modules
 package-lock.json
 server/account/account.json
 server/account/accountTest.json
+server/account/mailAccount.json
+
