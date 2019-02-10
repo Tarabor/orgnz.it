@@ -19,7 +19,7 @@
     <div padding-horizontal>
       <div class="form-error">{{loginError}}</div>
       <ion-button expand="block" type="submit" [disabled]="!loginForm.valid">Log in</ion-button>
-      <ion-button icon-left block clear (click)="loginWithGoogle()">
+      <ion-button expand="block" icon-left (click)="loginWithGoogle()">
         Log in with Google
         <ion-icon name="logo-google"></ion-icon>
         </ion-button>
