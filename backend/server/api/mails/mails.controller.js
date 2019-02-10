@@ -4,9 +4,10 @@ require.extensions['.html'] = function (module, filename) {
     module.exports = fs.readFileSync(filename, 'utf8');
 };
 
-const CONFIG = require(`./environment/${process.env.NODE_ENV}.js`);
-const API_KEY = CONFIG.mailProvider.API_KEY;
-const DOMAIN = CONFIG.mailProvider.DOMAIN;
+const CONFIG = require(`../../config/environment/${process.env.NODE_ENV}.js`);
+console.log( CONFIG.mailProvider.mailAccount);
+const API_KEY =  require(`../../${CONFIG.mailProvider.mailAccount}`).API_KEY;
+const DOMAIN =  require(`../../${CONFIG.mailProvider.mailAccount}`).DOMAIN;
 const mailgun = require('mailgun-js')({apiKey: API_KEY, domain: DOMAIN});
 const nodeMailer = require("nodemailer");
 const EmailTemplate = require('email-templates').EmailTemplate;

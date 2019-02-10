@@ -9,6 +9,6 @@ module.exports = {
   },
   
   mailProvider: {
-    mailAccount: 'server/account/mailAccount.json'
+    mailAccount: 'account/mailAccount.json'
   }
 };
