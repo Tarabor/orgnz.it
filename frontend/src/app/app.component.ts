@@ -9,7 +9,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html'
+  templateUrl: 'app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   public appPages = [
@@ -40,6 +41,8 @@ export class AppComponent {
     }
   ];
 
+  showSplash = true;
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -60,6 +63,9 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      setTimeout(() => {
+        this.showSplash = false;
+      }, 3000)
       this.authenticationService.authenticationState.subscribe(state => {
         if (state) {
           this.router.navigate(['members', 'dashboard']);
