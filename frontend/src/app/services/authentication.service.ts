@@ -5,6 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
+import { HttpHeaders } from '@angular/common/http';
 
 const TOKEN_KEY = 'auth-token';
 
@@ -13,6 +14,10 @@ const TOKEN_KEY = 'auth-token';
 })
 export class AuthenticationService {
   authenticationState = new BehaviorSubject(false);
+  header = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': 'token'
+  });
 
   constructor(
     private storage: Storage,
@@ -29,12 +34,6 @@ export class AuthenticationService {
       if (res) {
         this.authenticationState.next(true);
       }
-    });
-  }
-
-  login() {
-    return this.storage.set(TOKEN_KEY, 'Bearer 1234567').then(() => {
-      this.authenticationState.next(true);
     });
   }
 
@@ -55,14 +54,18 @@ export class AuthenticationService {
     });
   }
 
-  isAuthenticated() {
-    return this.authenticationState.value;
+  getAPIHeader() {
+    let headers = new HttpHeaders();
+    headers = headers.append('Content-Type', 'application/json');
+    this.storage.get('TOKEN_KEY').then(resp => {
+      console.warn(resp);
+      headers = headers.append('Authorization', resp);
+    });
+    return headers;
   }
 
-  getToken() {
-    this.storage.get(TOKEN_KEY).then(res => {
-        this.authenticationState.next(true);
-    });
+  isAuthenticated() {
+    return this.authenticationState.value;
   }
 
 
