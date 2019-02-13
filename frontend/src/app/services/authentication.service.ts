@@ -55,13 +55,16 @@ export class AuthenticationService {
   }
 
   getAPIHeader() {
-    let headers = new HttpHeaders();
-    headers = headers.append('Content-Type', 'application/json');
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'jjj' });
+    return headers;
+    /*headers = headers.append('Content-Type', 'application/json');
     this.storage.get('TOKEN_KEY').then(resp => {
       console.warn(resp);
       headers = headers.append('Authorization', resp);
     });
-    return headers;
+    return headers;*/
   }
 
   isAuthenticated() {
