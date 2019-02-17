@@ -14,7 +14,7 @@ export class CirclesService {
               private authService: AuthenticationService) { }
 
   public getAllCircles(): Observable<[]> {
-    return this.http.get<[]>( this.baseUrl + '/all', {headers: this.authService.getAPIHeader()});
+    return this.http.get<[]>( this.baseUrl + '/all');
   }
 
 }

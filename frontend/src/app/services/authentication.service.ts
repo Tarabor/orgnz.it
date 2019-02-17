@@ -47,29 +47,19 @@ export class AuthenticationService {
   // ########## Refactored Method
   signInWithEmail(credentials) {
     return this.afAuth.auth.signInWithEmailAndPassword(credentials.email, credentials.password).then(resp => {
-      if (resp) {
-        this.authenticationState.next(true);
-        this.storage.set(TOKEN_KEY, resp.user.getIdToken);
-      }
+        resp.user.getIdToken().then(token => {
+          this.authenticationState.next(true);
+          localStorage.setItem('TOKEN_KEY', token);
+        });
     });
   }
 
-  getAPIHeader() {
-    let headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': 'jjj' });
-    return headers;
-    /*headers = headers.append('Content-Type', 'application/json');
-    this.storage.get('TOKEN_KEY').then(resp => {
-      console.warn(resp);
-      headers = headers.append('Authorization', resp);
-    });
-    return headers;*/
+  public getToken(): string {
+    return localStorage.getItem('TOKEN_KEY');
   }
 
   isAuthenticated() {
     return this.authenticationState.value;
   }
-
 
 }
