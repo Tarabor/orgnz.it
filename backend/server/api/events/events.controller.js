@@ -8,6 +8,7 @@ exports.getAll = function(req, res) {
   })
   .catch(err => {
     console.log('Error getting events documents', err);
+    res.status(500).send('Error');
   });
 };
 
@@ -17,6 +18,7 @@ exports.getOne = function (req, res) {
   })
   .catch(err => {
     console.log('Error getting events documents', err);
+    res.status(500).send('Error');
   });
 };
 
@@ -37,6 +39,7 @@ exports.createEvent = function(req, res) {
     })
     .catch(err => {
       console.log('Error in user insetion', err);
+      res.status(500).send('Error');
     });
   // TODO check circle exists
 };
@@ -50,6 +53,7 @@ exports.updateEvent = function(req, res) {
   })
   .catch(err => {
     console.log('Error in event update', err);
+    res.status(500).send('Error');
   });
 
 };
@@ -59,10 +63,10 @@ exports.deleteEvent = function(req, res) {
 
   eventRepo.deleteEvent(event).then(response => {
     console.log('Document deleted with ID: ', response);
-
     res.send(`Event with ${event.id} successfully deleted!`);
   })
   .catch(err => {
     console.log('Error in Event deletion', err);
+    res.status(500).send('Error');
   });
 };

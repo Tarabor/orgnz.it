@@ -6,6 +6,7 @@ exports.getAll = function(req, res) {
   })
   .catch(err => {
     console.log('Error getting users documents', err);
+    res.status(500).send('Error');
   });
 };
 
@@ -15,6 +16,7 @@ exports.getOne = function (req, res) {
   })
   .catch(err => {
     console.log('Error getting users documents', err);
+    res.status(500).send('Error');
   });
 };
 
@@ -25,6 +27,7 @@ exports.insertUser = function(req, res) {
   })
   .catch(err => {
     console.log('Error in user insetion', err);
+    res.status(500).send('Error');
   });
 };
 
@@ -37,6 +40,7 @@ exports.updateUser = function(req, res) {
   })
   .catch(err => {
     console.log('Error in user update', err);
+    res.status(500).send('Error');
   });
 };
 
@@ -50,5 +54,6 @@ exports.deleteUser = function(req, res) {
   })
   .catch(err => {
     console.log('Error in user deletion', err);
+    res.status(500).send('Error');
   });
 };
