@@ -3,21 +3,19 @@ const firebaseTest = require('firebase');
 
 const authService = firebase.auth();
 
-exports.verifyToken = function(req, res) {
-  const idToken = req.query.token;
+exports.verifyToken = function(req, res, next) {
+  const idToken = req.headers.authorization.split(" ")[1];
   if (!idToken || idToken === '') {
     res.status(500).send('Invalid Token');
   } else {
     authService
       .verifyIdToken(idToken)
       .then(decodedToken => {
-        const uid = decodedToken.uid;
-        res.send(uid);
-        console.log('UserID: ', uid);
+        console.log('User ID: ', decodedToken.uid);
+        next();
       })
       .catch(error => {
-        console.log('Error during user check', error);
-        res.status(500).send('Decoding Firebase ID token failed.');
+        res.status(500).send('Invalid Token');
       });
   }
 };
