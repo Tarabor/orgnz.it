@@ -7,7 +7,6 @@ exports.getAll = function() {
         db.collection('users')
           .get()
           .then(response => {
-            console.log(response);
             const usersNameList = []
             response.forEach(singleUser => usersNameList.push(singleUser.data().name));
             resolve(usersNameList);
@@ -19,10 +18,10 @@ exports.getAll = function() {
     });
 };
 
-exports.getOne = function (req) {
+exports.getOne = function (id) {
     return new Promise((resolve, reject) => {
         db.collection('users')
-          .doc(req.params.id)
+          .doc(id)
           .get()
           .then(doc => {
             if (doc.exists) {
@@ -41,8 +40,7 @@ exports.getOne = function (req) {
     });
 };
 
-exports.insertUser = function(req) {
-    const user = req.body;
+exports.insertUser = function(user) {
     return new Promise((resolve, reject) => {
         db.collection('users')
           .add(user)
@@ -57,10 +55,8 @@ exports.insertUser = function(req) {
     });
 };
 
-exports.updateUser = function(req) {
-  const user = req.body;
+exports.updateUser = function(user) {
   const id = user.id;
-  delete user.id;
   return new Promise((resolve, reject) => {
     db.collection('users')
         .doc(id)
@@ -76,8 +72,7 @@ exports.updateUser = function(req) {
     });
 };
 
-exports.deleteUser = function(req) {
-  const user = req.body;
+exports.deleteUser = function(user) {
   return new Promise((resolve, reject) => {
       db.collection('users')
         .doc(user.id)

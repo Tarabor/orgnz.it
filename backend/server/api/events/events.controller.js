@@ -39,8 +39,9 @@ exports.createEvent = function(req, res) {
   const event = req.body;
 
   new Promise((resolve, reject) => {
-    userRepo.getOne()
-    resolve();
+    userRepo.getOne().then((response) => {
+      resolve(response);
+    });
   }).then(data => {
 
   });
