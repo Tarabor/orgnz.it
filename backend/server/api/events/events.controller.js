@@ -1,13 +1,17 @@
 const eventRepo   = require('./events.repository');
 const userRepo    = require('../users/users.repository');
 const groupsCtrl = require('../groups/groups.controller');
+const WINLOGGER = require('../../utils/logger')
+
+const logger = new WINLOGGER('info')
 
 exports.getAll = function(req, res) {
   eventRepo.getAll(req).then(response => {
+    logger.info('Retrieve successfully');
     res.send(response);
   })
   .catch(err => {
-    console.log('Error getting events documents', err);
+    logger.info('Error getting events documents', err);
     res.status(500).send('Error');
   });
 };
@@ -17,7 +21,7 @@ exports.getOne = function (req, res) {
     res.send(response);
   })
   .catch(err => {
-    console.log('Error getting events documents', err);
+    logger.info('Error getting events documents', err);
     res.status(500).send('Error');
   });
 };
@@ -38,7 +42,7 @@ exports.createEvent = function(req, res) {
       res.send(`Event ${event.name} created correctly with id=${response.id}`);
     })
     .catch(err => {
-      console.log('Error in user insetion', err);
+      logger.info('Error in user insetion', err);
       res.status(500).send('Error');
     });
   // TODO check group exists
@@ -52,7 +56,7 @@ exports.updateEvent = function(req, res) {
     res.send(`Event with ${response.id} was updated correctly`);
   })
   .catch(err => {
-    console.log('Error in event update', err);
+    logger.info('Error in event update', err);
     res.status(500).send('Error');
   });
 
@@ -62,11 +66,11 @@ exports.deleteEvent = function(req, res) {
   const event = req.body;
 
   eventRepo.deleteEvent(event).then(response => {
-    console.log('Document deleted with ID: ', response);
+    logger.info('Document deleted with ID: ', response);
     res.send(`Event with ${event.id} successfully deleted!`);
   })
   .catch(err => {
-    console.log('Error in Event deletion', err);
+    logger.info('Error in Event deletion', err);
     res.status(500).send('Error');
   });
 };

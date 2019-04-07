@@ -4,7 +4,8 @@
   "rules": {
     "import/no-dynamic-require": 0,
     "func-names": 0,
-    "prefer-destructuring": 0
+    "prefer-destructuring": 0,
+    "no-plusplus": 0
   },
   "env": {
     "node": true
