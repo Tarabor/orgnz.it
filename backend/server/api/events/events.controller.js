@@ -1,4 +1,6 @@
 const firebase = require('firebase-admin');
+const userRepo = require('../users//users.repository');
+const circlesCtrl = require('../circles/circles.controller');
 
 const db = firebase.firestore();
 
@@ -15,8 +17,33 @@ exports.getAll = function(req, res) {
     });
 };
 
+exports.getOne = function (req, res) {
+  db.collection('events')
+    .doc(req.params.id)
+    .get()
+    .then(doc => {
+      if (doc.exists) {
+        console.log("Document data:", doc.data());
+        res.send(doc.data());
+      } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+      }
+    })
+    .catch(err => {
+      console.log('Error getting users documents', err);
+    });
+};
+
 exports.createEvent = function(req, res) {
   const event = req.body;
+
+  new Promise((resolve, reject) => {
+    userRepo.getOne()
+    resolve();
+  }).then(data => {
+
+  });
 
   //TODO check user exists
   //TODO check circle exists
@@ -58,7 +85,7 @@ exports.deleteEvent = function(req, res) {
     .delete()
     .then(response => {
       res.send(`Event with ${event.id} successfully deleted!`);
-      console.log('Document written with ID: ', response);
+      console.log('Document deleted with ID: ', response);
     })
     .catch(err => {
       console.log('Error in event deletion', err);
