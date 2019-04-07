@@ -1,6 +1,6 @@
-const firebase    = require('firebase-admin');
+const firebase = require('firebase-admin');
 
-const db          = firebase.firestore();
+const db = firebase.firestore();
 
 exports.getAll = function() {
   return new Promise((resolve, reject) => {

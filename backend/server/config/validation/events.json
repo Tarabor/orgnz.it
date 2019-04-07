@@ -14,7 +14,7 @@
         "type": "string",
         "required": true
       },
-      "circleId": {
+      "groupId": {
         "type": "string",
         "required": true
       },
@@ -48,7 +48,7 @@
         "type": "string",
         "required": true
       },
-      "circleId": {
+      "groupId": {
         "type": "string",
         "required": true
       },

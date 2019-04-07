@@ -8,7 +8,7 @@ import { AuthenticationService } from './authentication.service';
 })
 export class CirclesService {
 
-  private baseUrl = 'http://localhost:3000/api/circles';
+  private baseUrl = 'http://localhost:3000/api/groups';
 
   constructor(private http: HttpClient,
               private authService: AuthenticationService) { }

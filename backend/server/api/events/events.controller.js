@@ -41,7 +41,7 @@ exports.createEvent = function(req, res) {
       console.log('Error in user insetion', err);
       res.status(500).send('Error');
     });
-  // TODO check circle exists
+  // TODO check group exists
 };
 
 exports.updateEvent = function(req, res) {

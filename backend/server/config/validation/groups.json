@@ -1,0 +1,23 @@
+{
+  "post": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "required": true
+      },
+      "description": {
+        "type": "string",
+        "required": true
+      },
+      "open": {
+        "type": "boolean",
+        "required": true
+      },
+      "type": {
+        "type": "string",
+        "required": false
+      }
+    }
+  }
+}

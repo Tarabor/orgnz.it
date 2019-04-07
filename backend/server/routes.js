@@ -10,7 +10,7 @@ const mails = require('./api/mails');
 module.exports = function(app) {
   // Insert routes below  
   app.use('/api/users', users);
-  app.use('/api/circles', groups);
+  app.use('/api/groups', groups);
   app.use('/api/events', events);
   app.use('/api/auth', auth);
   app.use('/api/mails', mails);
