@@ -6,7 +6,7 @@ const authService = firebase.auth();
 exports.verifyToken = function(req, res, next) {
   const idToken = req.headers.authorization.split(" ")[1];
   if (!idToken || idToken === '') {
-    res.status(500).send('Invalid Token');
+    res.status(500).send('Empty Token');
   } else {
     authService
       .verifyIdToken(idToken)

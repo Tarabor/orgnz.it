@@ -1,6 +1,6 @@
 const firebase = require('firebase-admin');
 const userRepo = require('../users//users.repository');
-const circlesCtrl = require('../circles/circles.controller');
+const groupsCtrl = require('../groups/groups.controller');
 
 const db = firebase.firestore();
 

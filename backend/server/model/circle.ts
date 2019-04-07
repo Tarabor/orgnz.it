@@ -1,4 +1,4 @@
-export class Circle {
+export class Group {
     public name: string;
     public description: string;
     public open: boolean;
