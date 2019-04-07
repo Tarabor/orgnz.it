@@ -36,7 +36,7 @@ exports.updateUser = function(req, res) {
     res.send(`User with ${response.id} was updated correctly`);
   })
   .catch(err => {
-    console.log('Error in user insetion', err);
+    console.log('Error in user update', err);
   });
 };
 
