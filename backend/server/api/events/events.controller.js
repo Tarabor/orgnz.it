@@ -50,8 +50,6 @@ exports.createEvent = function(req, res) {
 
 exports.updateEvent = function(req, res) {
   const event = req.body;
-  delete event.id;
-
   eventRepo.updateEvent(event).then(response => {
     res.send(`Event with ${response.id} was updated correctly`);
   })
@@ -63,11 +61,9 @@ exports.updateEvent = function(req, res) {
 };
 
 exports.deleteEvent = function(req, res) {
-  const event = req.body;
-
-  eventRepo.deleteEvent(event).then(response => {
+  eventRepo.deleteEvent(req.params.id).then(response => {
     logger.info('Document deleted with ID: ', response);
-    res.send(`Event with ${event.id} successfully deleted!`);
+    res.send(`Event with ${req.params.id} successfully deleted!`);
   })
   .catch(err => {
     logger.error('Error in Event deletion', err);
