@@ -5,10 +5,12 @@
     "events": "Eventi",
     "groups": "Gruppi",
     "logout": "Logout",
+    "account": "Profilo",
     "dashboard": {
        "title": "Dashboard",
        "createEvent": "Organizza un evento",
-       "createGroup": "Crea un gruppo" 
+       "createGroup": "Crea un gruppo",
+       "nextEvents":"Prossimi Eventi:"
     },
     "profile": {
         "language": "Lingua",
