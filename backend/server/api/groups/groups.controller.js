@@ -1,11 +1,16 @@
+const CONFIG    = require(`../../config/environment/${process.env.NODE_ENV}.js`);
 const groupRepo = require('./groups.repository');
+const WINLOGGER = require('../../utils/logger');
+
+const logger    = new WINLOGGER(CONFIG.loggerLevel);
+
 
 exports.getAll = function(req, res) {
   groupRepo.getAll(req).then(response => {
     res.send(response);
   })
   .catch(err => {
-    console.log('Error getting groups documents', err);
+    logger.error('Error getting groups documents', err);
   });
 };
 
@@ -16,8 +21,8 @@ exports.createGroup = function(req, res) {
     res.send(`Group ${group.name} created correctly with id=${response}`);
   })
   .catch(err => {
-    console.log('Error in group insetion', err);
-      res.status(500).send('Error');
+    logger.error('Error in group insetion', err);
+    res.status(500).send('Error');
   });
 };
 
@@ -27,18 +32,18 @@ exports.updateGroup = function(req, res) {
     res.send(`Group with ID: ${response.id} was updated correctly`);
   })
   .catch(err => {
-    console.log('Error in group update', err);
+    logger.error('Error in group update', err);
     res.status(500).send('Error');
   });
 };
 
 exports.deleteGroup = function(req, res) {
   groupRepo.deleteGroup(req.params.id).then(response => {
-    console.log('Group deleted with ID: ', req.params.id);
+    logger.info('Group deleted with ID: ', req.params.id);
     res.send(`Group with ID: ${req.params.id} successfully deleted!`);
   })
   .catch(err => {
-    console.log('Error in group deletion', err);
+    logger.error('Error in group deletion', err);
     res.status(500).send('Error');
   });
 };
