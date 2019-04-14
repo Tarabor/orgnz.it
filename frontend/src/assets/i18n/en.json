@@ -3,12 +3,12 @@
     "home": "Home",
     "list": "List",
     "events": "Events",
-    "circles": "Circles",
+    "groups": "Groups",
     "logout": "Logout",
     "dashboard": {
        "title": "Dashboard",
        "createEvent": "Create an event",
-       "createCircle": "Create a circle"
+       "createGroup": "Create a group"
     },
     "profile": {
         "language": "Language",

@@ -24,8 +24,8 @@ export class DashboardPage implements OnInit {
     this.navCtrl.navigateForward('/members/addEvent');
   }
 
-  goToAddCircle() {
-    this.navCtrl.navigateForward('/members/addCircle');
+  goToAddGroup() {
+    this.navCtrl.navigateForward('/members/addGroup');
   }
 
 

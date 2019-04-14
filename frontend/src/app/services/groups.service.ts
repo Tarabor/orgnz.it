@@ -6,14 +6,14 @@ import { AuthenticationService } from './authentication.service';
 @Injectable({
   providedIn: 'root'
 })
-export class CirclesService {
+export class GroupsService {
 
   private baseUrl = 'http://localhost:3000/api/groups';
 
   constructor(private http: HttpClient,
               private authService: AuthenticationService) { }
 
-  public getAllCircles(): Observable<[]> {
+  public getAllGroups(): Observable<[]> {
     return this.http.get<[]>( this.baseUrl + '/all');
   }
 

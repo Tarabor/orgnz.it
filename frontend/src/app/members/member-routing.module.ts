@@ -13,12 +13,12 @@ const routes: Routes = [
   },
   { path: 'list', loadChildren: './list/list.module#ListPageModule' },
   { path: 'addEvent', loadChildren: './addEvent/addEvent.module#AddEventPageModule' },
-  { path: 'addCircle', loadChildren: './addCircle/addCircle.module#AddCirclePageModule' },
+  { path: 'addGroup', loadChildren: './addGroup/addGroup.module#AddGroupPageModule' },
   { path: 'success', loadChildren: './success/success.module#SuccessPageModule' },
   { path: 'events', loadChildren: './events/events.module#EventsPageModule' },
   { path: 'event', loadChildren: './event/event.module#EventPageModule' },
-  { path: 'circles', loadChildren: './circles/circles.module#CirclesPageModule' },
-  { path: 'circle', loadChildren: './circle/circle.module#CirclePageModule' }
+  { path: 'groups', loadChildren: './groups/groups.module#GroupsPageModule' },
+  { path: 'group', loadChildren: './group/group.module#GroupPageModule' }
 
 
 ];

@@ -2,11 +2,11 @@ import { Component } from "@angular/core";
 import { NavController } from "@ionic/angular";
 
 @Component({
-  selector: "app-circle",
-  templateUrl: "./circle.page.html",
-  styleUrls: ["./circle.page.scss"]
+  selector: "app-group",
+  templateUrl: "./group.page.html",
+  styleUrls: ["./group.page.scss"]
 })
-export class CirclePage {
+export class GroupPage {
   constructor(public navCtrl: NavController) {}
 
 

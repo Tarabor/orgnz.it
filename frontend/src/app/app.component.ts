@@ -30,8 +30,8 @@ export class AppComponent {
       icon: 'calendar'
     },
     {
-      title: 'circles',
-      url: '/members/circles',
+      title: 'groups',
+      url: '/members/groups',
       icon: 'people'
     },
     {

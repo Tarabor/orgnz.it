@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CirclePage } from './circle.page';
+import { GroupsPage } from './groups.page';
 
 @NgModule({
   imports: [
@@ -16,10 +16,10 @@ import { CirclePage } from './circle.page';
     RouterModule.forChild([
       {
         path: '',
-        component: CirclePage
+        component: GroupsPage
       }
     ])
   ],
-  declarations: [CirclePage]
+  declarations: [GroupsPage]
 })
-export class CirclePageModule {}
+export class GroupsPageModule {}

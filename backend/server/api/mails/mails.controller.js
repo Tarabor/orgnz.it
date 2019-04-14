@@ -20,7 +20,7 @@ const testo = require('./views/html.html')
 const mailOptions = {
     from: 'Orgnz.it! <me@samples.mailgun.org>',
     to: 'angelonicoladimartino@gmail.com, marco.taraborrelli@gmail.com, fraticelli.antonio@gmail.com',
-    subject: 'Sei stato aggiunto ad una cerchia!',
+    subject: 'Sei stato aggiunto ad un gruppo!',
     body: 'Test email text',
     html: testo
 };
