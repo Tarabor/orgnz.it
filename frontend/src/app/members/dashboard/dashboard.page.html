@@ -8,17 +8,47 @@
 </ion-header>
 
 <ion-content>
-  <h1 id="home-heading2" style="color:#000000;text-align:center;">
+  <h1 class="home-heading1">
     <i>ORGANIZE IT!</i>
   </h1>
-  <ion-button id="home-button5" color="secondary" expand="full" fill="clear" on-click="goToAddEvent()">
-    {{ 'dashboard.createEvent' | translate }}
-    <ion-icon name="add-group" slot="end"></ion-icon>
-  </ion-button>
-  <ion-button id="home-button6" color="secondary" expand="full" fill="clear" on-click="goToAddGroup()" class="addGroupBtn">
-    {{ 'dashboard.createGroup' | translate }}
-    <ion-icon name="add-group" slot="end"></ion-icon>
-  </ion-button>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-button id="home-button5" color="secondary" expand="full" fill="clear" on-click="goToAddEvent()">
+            {{ 'dashboard.createEvent' | translate }}
+            <ion-icon name="add-group" slot="end"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-button id="home-button6" color="secondary" expand="full" fill="clear" on-click="goToAddGroup()"
+            class="addGroupBtn">
+            {{ 'dashboard.createGroup' | translate }}
+            <ion-icon name="add-group" slot="end"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <h2 class="home-heading2">
+    {{ 'dashboard.nextEvents' | translate }}
+  </h2>
+  <ion-card> <!-- todo *ngFor="let event of events"-->
+    <ion-card-header>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-title>Card Title</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
+    
+
 
   <ion-card class="welcome-card">
     <ion-card-content>

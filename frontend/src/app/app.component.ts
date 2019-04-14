@@ -35,6 +35,11 @@ export class AppComponent {
       icon: 'people'
     },
     {
+      title: 'account',
+      url: '/members/profile',
+      icon: 'contact'
+    },
+    {
       title: 'logout',
       url: '/members/logout',
       icon: 'power'

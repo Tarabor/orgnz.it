@@ -18,8 +18,8 @@ const routes: Routes = [
   { path: 'events', loadChildren: './events/events.module#EventsPageModule' },
   { path: 'event', loadChildren: './event/event.module#EventPageModule' },
   { path: 'groups', loadChildren: './groups/groups.module#GroupsPageModule' },
-  { path: 'group', loadChildren: './group/group.module#GroupPageModule' }
-
+  { path: 'group', loadChildren: './group/group.module#GroupPageModule' },
+  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' }
 
 ];
 
