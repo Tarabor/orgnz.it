@@ -11,5 +11,7 @@ module.exports = {
   firebase: {
     databaseURL: 'https://progettp.firebaseio.com',
     serviceAccount: 'progettp/prod.json'
-  }
+  },
+
+  loggerLevel: 'info'
 };

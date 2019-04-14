@@ -1,6 +1,10 @@
-const firebase = require('firebase-admin');
+const CONFIG    = require(`../../config/environment/${process.env.NODE_ENV}.js`);
+const firebase  = require('firebase-admin');
+const WINLOGGER = require('../../utils/logger');
 
-const db = firebase.firestore();
+const db        = firebase.firestore();
+const logger    = new WINLOGGER(CONFIG.loggerLevel);
+
 
 exports.getAll = function() {
     return new Promise((resolve, reject) => {
@@ -14,7 +18,7 @@ exports.getAll = function() {
             resolve(groupsList);
           })
           .catch(err => {
-            console.log('Error getting groups documents', err);
+            logger.error('Error getting groups documents', err);
             reject(err);
           });
     });
@@ -25,11 +29,11 @@ exports.createGroup = function(group) {
     db.collection('groups')
       .add(group)
       .then(response => {
-        console.log(`Group ${group.name} created correctly with id=${response.id}`);
+        logger.info(`Group ${group.name} created correctly with id=${response.id}`);
         resolve(response.id);
       })
       .catch(err => {
-        console.log('Error in event insertion', err);
+        logger.error('Error in event insertion', err);
         reject(err);
       });
   });
@@ -44,11 +48,11 @@ exports.updateGroup = function(group) {
       .doc(idToUpdate)
       .set(group)
       .then(response => {
-        console.log(`Group with ID: ${idToUpdate} was updated correctly`);
+        logger.info(`Group with ID: ${idToUpdate} was updated correctly`);
         resolve(response);
       })
       .catch(err => {
-        console.log('Error in group update', err);
+        logger.error('Error in group update', err);
         reject(err);
       });
   });
@@ -60,11 +64,11 @@ exports.deleteGroup = function(groupId) {
       .doc(groupId)
       .delete()
       .then(response => {
-        console.log(`Group with ID: ${groupId} successfully deleted!`);
+        logger.info(`Group with ID: ${groupId} successfully deleted!`);
         resolve(response);
       })
       .catch(err => {
-        console.log('Error in group deletion', err);
+        logger.error('Error in group deletion', err);
         reject(err);
       });
   });

@@ -10,5 +10,7 @@ module.exports = {
   
   mailProvider: {
     mailAccount: 'account/mailAccount.json'
-  }
+  },
+
+  loggerLevel: 'debug'
 };
