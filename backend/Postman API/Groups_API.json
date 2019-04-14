@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "49cdd2fe-a38c-46c5-bab3-31809c845588",
+		"name": "Orgnzit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Groups - GetAll",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjVmYjMyOWRmNjdiYjY4NDVkNDk1NDNiMGM0OWIzNWM4ODg1NzllYmEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcG92ZXJ0eWFwcCIsImF1ZCI6InBvdmVydHlhcHAiLCJhdXRoX3RpbWUiOjE1NTUyNTYxNTAsInVzZXJfaWQiOiJ1T1Z4eGxrSDVaaHBqa3l0RWE0aUNUTmEwTEMzIiwic3ViIjoidU9WeHhsa0g1Wmhwamt5dEVhNGlDVE5hMExDMyIsImlhdCI6MTU1NTI1NjE1MCwiZXhwIjoxNTU1MjU5NzUwLCJlbWFpbCI6ImFuZ2Vsb0BtYWlsLml0IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFuZ2Vsb0BtYWlsLml0Il19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.YArPcFm3FiQjbTfQfvcRIwpCuhlPOQ-eBNX-5za6ijb_WDBhEN_rh_wUe9rA9-QgoAL1Aib0YvjgifqUuSBf88JTmC_Kab8Nxnq1PL_vENNCN49PGrkodaX2QsDoPZ_wV90d5y0yx3u16FFWWrUmeFaXxHi25eUMUH36cjHdcO2nvNcbFyC7BVXpRnuRsEwBLJHmWFGAsYy56Lpglb0c53TFzhcMH9PjBZv2X6xtRw_a5Rzs_9NjPgY3gIbx9bH2Xv_WN3cKIHm-cYRDdYYmXif3Olp_tvy18J6Mcbq0M0M-yfw-zGFz68NRO3TK5FkCUnjwneAivZ2qE4B78yxRHg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/groups/all",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"groups",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Groups - Create Group",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjVmYjMyOWRmNjdiYjY4NDVkNDk1NDNiMGM0OWIzNWM4ODg1NzllYmEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcG92ZXJ0eWFwcCIsImF1ZCI6InBvdmVydHlhcHAiLCJhdXRoX3RpbWUiOjE1NTUyNTYxNTAsInVzZXJfaWQiOiJ1T1Z4eGxrSDVaaHBqa3l0RWE0aUNUTmEwTEMzIiwic3ViIjoidU9WeHhsa0g1Wmhwamt5dEVhNGlDVE5hMExDMyIsImlhdCI6MTU1NTI1NjE1MCwiZXhwIjoxNTU1MjU5NzUwLCJlbWFpbCI6ImFuZ2Vsb0BtYWlsLml0IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFuZ2Vsb0BtYWlsLml0Il19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.YArPcFm3FiQjbTfQfvcRIwpCuhlPOQ-eBNX-5za6ijb_WDBhEN_rh_wUe9rA9-QgoAL1Aib0YvjgifqUuSBf88JTmC_Kab8Nxnq1PL_vENNCN49PGrkodaX2QsDoPZ_wV90d5y0yx3u16FFWWrUmeFaXxHi25eUMUH36cjHdcO2nvNcbFyC7BVXpRnuRsEwBLJHmWFGAsYy56Lpglb0c53TFzhcMH9PjBZv2X6xtRw_a5Rzs_9NjPgY3gIbx9bH2Xv_WN3cKIHm-cYRDdYYmXif3Olp_tvy18J6Mcbq0M0M-yfw-zGFz68NRO3TK5FkCUnjwneAivZ2qE4B78yxRHg",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Newgroup04232\",\n    \"description\": \"Quarto gruppo di test\",\n    \"open\": true,\n    \"type\": \"cazz\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/groups",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Groups - Edit Group",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjVmYjMyOWRmNjdiYjY4NDVkNDk1NDNiMGM0OWIzNWM4ODg1NzllYmEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcG92ZXJ0eWFwcCIsImF1ZCI6InBvdmVydHlhcHAiLCJhdXRoX3RpbWUiOjE1NTUyNTYxNTAsInVzZXJfaWQiOiJ1T1Z4eGxrSDVaaHBqa3l0RWE0aUNUTmEwTEMzIiwic3ViIjoidU9WeHhsa0g1Wmhwamt5dEVhNGlDVE5hMExDMyIsImlhdCI6MTU1NTI1NjE1MCwiZXhwIjoxNTU1MjU5NzUwLCJlbWFpbCI6ImFuZ2Vsb0BtYWlsLml0IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFuZ2Vsb0BtYWlsLml0Il19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.YArPcFm3FiQjbTfQfvcRIwpCuhlPOQ-eBNX-5za6ijb_WDBhEN_rh_wUe9rA9-QgoAL1Aib0YvjgifqUuSBf88JTmC_Kab8Nxnq1PL_vENNCN49PGrkodaX2QsDoPZ_wV90d5y0yx3u16FFWWrUmeFaXxHi25eUMUH36cjHdcO2nvNcbFyC7BVXpRnuRsEwBLJHmWFGAsYy56Lpglb0c53TFzhcMH9PjBZv2X6xtRw_a5Rzs_9NjPgY3gIbx9bH2Xv_WN3cKIHm-cYRDdYYmXif3Olp_tvy18J6Mcbq0M0M-yfw-zGFz68NRO3TK5FkCUnjwneAivZ2qE4B78yxRHg"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"4LvoPmGQHIrg5WU4EtQI\",\n    \"name\": \"Newgroup031\",\n    \"description\": \"Terzo gruppo djaskjdlkasdi test\",\n    \"open\": true,\n    \"type\": \"cazz\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/groups",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Groups - Delete Group",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjVmYjMyOWRmNjdiYjY4NDVkNDk1NDNiMGM0OWIzNWM4ODg1NzllYmEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcG92ZXJ0eWFwcCIsImF1ZCI6InBvdmVydHlhcHAiLCJhdXRoX3RpbWUiOjE1NTUyNTYxNTAsInVzZXJfaWQiOiJ1T1Z4eGxrSDVaaHBqa3l0RWE0aUNUTmEwTEMzIiwic3ViIjoidU9WeHhsa0g1Wmhwamt5dEVhNGlDVE5hMExDMyIsImlhdCI6MTU1NTI1NjE1MCwiZXhwIjoxNTU1MjU5NzUwLCJlbWFpbCI6ImFuZ2Vsb0BtYWlsLml0IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImFuZ2Vsb0BtYWlsLml0Il19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.YArPcFm3FiQjbTfQfvcRIwpCuhlPOQ-eBNX-5za6ijb_WDBhEN_rh_wUe9rA9-QgoAL1Aib0YvjgifqUuSBf88JTmC_Kab8Nxnq1PL_vENNCN49PGrkodaX2QsDoPZ_wV90d5y0yx3u16FFWWrUmeFaXxHi25eUMUH36cjHdcO2nvNcbFyC7BVXpRnuRsEwBLJHmWFGAsYy56Lpglb0c53TFzhcMH9PjBZv2X6xtRw_a5Rzs_9NjPgY3gIbx9bH2Xv_WN3cKIHm-cYRDdYYmXif3Olp_tvy18J6Mcbq0M0M-yfw-zGFz68NRO3TK5FkCUnjwneAivZ2qE4B78yxRHg"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/groups/wclLlNSa7Fh4ae853H3e",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"groups",
+						"wclLlNSa7Fh4ae853H3e"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
