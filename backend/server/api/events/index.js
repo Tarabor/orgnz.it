@@ -11,6 +11,6 @@ router.get('/all', authController.verifyToken, controller.getAll);
 router.get('/:id', authController.verifyToken, controller.getOne);
 router.post('', authController.verifyToken, validate({ body: EVENTS_SCHEMA.post }), controller.createEvent);
 router.put('', authController.verifyToken, validate({ body: EVENTS_SCHEMA.put }), controller.updateEvent);
-router.delete('', authController.verifyToken, validate({ body: EVENTS_SCHEMA.delete }), controller.deleteEvent);
+router.delete('/:id', authController.verifyToken, controller.deleteEvent);
 
 module.exports = router;

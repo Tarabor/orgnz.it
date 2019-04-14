@@ -60,12 +60,14 @@ exports.insertEvent = function(event) {
 };
 
 exports.updateEvent = function(event) {
+  const idToUpdate = event.id;
+  delete event.id;
   return new Promise((resolve, reject) => {
     db.collection('events')
-      .doc(event.id)
+      .doc(idToUpdate)
       .set(event)
       .then(response => {
-        logger.info(`Event with ${event.id} was updated correctly`);
+        logger.info(`Event with ${idToUpdate} was updated correctly`);
         resolve(response);
       })
       .catch(err => {
@@ -75,13 +77,13 @@ exports.updateEvent = function(event) {
   });
 };
 
-exports.deleteEvent = function(event) {
+exports.deleteEvent = function(eventId) {
   return new Promise((resolve, reject) => {
     db.collection('events')
-      .doc(event.id)
+      .doc(eventId)
       .delete()
       .then(response => {
-        logger.info(`Event with ${event.id} successfully deleted!`);
+        logger.info(`Event with ${eventId} successfully deleted!`);
         resolve(response);
       })
       .catch(err => {
