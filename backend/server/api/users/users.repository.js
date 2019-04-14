@@ -1,5 +1,7 @@
 const firebase    = require('firebase-admin');
+const WINLOGGER   = require('../../utils/logger')
 
+const logger      = new WINLOGGER('info')
 const db          = firebase.firestore();
 
 exports.getAll = function() {
@@ -12,7 +14,7 @@ exports.getAll = function() {
         resolve(usersNameList);
       })
       .catch(err => {
-        console.log('Error getting users documents', err);
+        logger.error('Error getting users documents', err);
         reject(err);
       });
   });
@@ -25,16 +27,15 @@ exports.getOne = function(id) {
       .get()
       .then(doc => {
         if (doc.exists) {
-          console.log('Document data:', doc.data());
+          logger.info('Document data:', doc.data());
           resolve(doc.data());
         } else {
-          // doc.data() will be undefined in this case
-          console.log('No such document!');
+          logger.info('No such document!');
           resolve();
         }
       })
       .catch(err => {
-        console.log('Error getting users documents', err);
+        logger.error('Error getting users documents', err);
         reject(err);
       });
   });
@@ -45,11 +46,11 @@ exports.insertUser = function(user) {
     db.collection('users')
       .add(user)
       .then(response => {
-        console.log(`User ${user.name} created correctly with id=${response.id}`);
+        logger.info(`User ${user.name} created correctly with id=${response.id}`);
         resolve(response.id);
       })
       .catch(err => {
-        console.log('Error in user insetion', err);
+        logger.error('Error in user insetion', err);
         reject(err);
       });
   });
@@ -61,11 +62,11 @@ exports.updateUser = function(user) {
       .doc(user.id)
       .set(user)
       .then(response => {
-        console.log(`User with ${user.id} was updated correctly`);
+        logger.info(`User with ${user.id} was updated correctly`);
         resolve(response);
       })
       .catch(err => {
-        console.log('Error in user insetion', err);
+        logger.error('Error in user insetion', err);
         reject(err);
       });
   });
@@ -77,11 +78,11 @@ exports.deleteUser = function(user) {
       .doc(user.id)
       .delete()
       .then(response => {
-        console.log(`User with ${user.id} successfully deleted!`);
+        logger.info(`User with ${user.id} successfully deleted!`);
         resolve(response);
       })
       .catch(err => {
-        console.log('Error in user deletion', err);
+        logger.error('Error in user deletion', err);
         reject(err);
       });
   });
